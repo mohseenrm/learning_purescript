@@ -1,25 +1,25 @@
--- module RecordBook where
+module RecordBook where
 
--- --import data type and essentials
+--import data type and essentials
 
--- import Prelude
--- import Data.List
--- import Control.Monad.Eff.Console (log)
--- import Data.BooleanAlgebra (class BooleanAlgebra)
--- import Data.List.Lazy.Types (Step(..))
--- import Data.Maybe (Maybe)
+import Prelude
+import Data.List
+import Control.Monad.Eff.Console (log)
+import Data.BooleanAlgebra (class BooleanAlgebra)
+import Data.List.Lazy.Types (Step(..))
+import Data.Maybe (Maybe)
 
--- type Entry   = {
--- 	first_name :: String,
--- 	last_name  :: String,
--- 	address    :: Address
--- }
+type Entry   = {
+	first_name :: String,
+	last_name  :: String,
+	address    :: Address
+}
 
--- type Address = {
--- 	street :: String,
--- 	city   :: String,
--- 	state  :: String
--- }
+type Address = {
+	street :: String,
+	city   :: String,
+	state  :: String
+}
 
 -- type AddressBook = List Entry
 

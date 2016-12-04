@@ -4,10 +4,10 @@ module RecordBook where
 
 import Prelude
 import Data.List
-
---importing extra modules
-
 import Control.Monad.Eff.Console (log)
+import Data.BooleanAlgebra (class BooleanAlgebra)
+import Data.List.Lazy.Types (Step(..))
+import Data.Maybe (Maybe)
 
 type Entry   = {
 	first_name :: String,
@@ -36,3 +36,20 @@ show_address :: Address -> String
 show_address address =  address.street <> ", " <>
 						address.city <> ", " <>
 						address.state
+
+--Definition of an empty record
+empty_address :: AddressBook
+empty_address = empty
+
+insert_entry :: Entry -> AddressBook -> AddressBook
+insert_entry entry book = Cons entry book
+
+filter :: (Entry -> Boolean) -> AddressBook -> AddressBook
+
+head :: AddressBook -> Maybe Entry 
+
+find_entry :: String -> String -> AddressBook -> Maybe Entry
+find_entry first_name last_name = head <<< filter filter_entry
+	where
+		filter_entry :: Entry -> BooleanAlgebra
+		filter_entry entry = entry.first_name == first_name && entry.last_name == last_name 

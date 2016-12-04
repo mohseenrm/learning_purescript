@@ -44,9 +44,9 @@ empty_address = empty
 insert_entry :: Entry -> AddressBook -> AddressBook
 insert_entry entry book = Cons entry book
 
-filter :: (Entry -> Boolean) -> AddressBook -> AddressBook
+-- filter :: (Entry -> Boolean) -> AddressBook -> AddressBook
 
-head :: AddressBook -> Maybe Entry 
+-- head :: AddressBook -> Maybe Entry 
 
 find_entry :: String -> String -> AddressBook -> Maybe Entry
 find_entry first_name last_name = head <<< filter filter_entry

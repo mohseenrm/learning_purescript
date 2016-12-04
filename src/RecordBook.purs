@@ -9,7 +9,7 @@ import Data.List
 
 import Control.Monad.Eff.Console (log)
 
-type Entry = {
+type Entry   = {
 	first_name :: String,
 	last_name  :: String,
 	address    :: Address
